@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { Habit, Goal, UserProfile } from '../types';
+import { Habit, Goal, UserProfile } from '../types.ts';
 import { Flame, Target, Trophy, TrendingUp, Play, Pause, RotateCcw, User } from 'lucide-react';
-import { storage } from '../services/storageService';
+import { storage } from '../services/storageService.ts';
 
 interface Props {
   habits: Habit[];

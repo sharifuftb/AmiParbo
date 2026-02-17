@@ -17,6 +17,10 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
+    <script>
+      // ব্রাউজারে প্রসেস এরর এড়ানোর জন্য
+      window.process = window.process || { env: { API_KEY: "" } };
+    </script>
 <script type="importmap">
 {
   "imports": {
@@ -33,5 +37,7 @@
 </head>
 <body class="bg-slate-950 text-slate-100">
     <div id="root"></div>
+    <!-- এই স্ক্রিপ্ট ট্যাগটি ছাড়া অ্যাপ চলবে না -->
+    <script type="module" src="index.tsx"></script>
 </body>
 </html>

@@ -16,14 +16,14 @@ import {
   Settings as SettingsIcon,
   User
 } from 'lucide-react';
-import { Habit, Goal, Theme, UserProfile } from './types';
-import { storage } from './services/storageService';
-import Dashboard from './components/Dashboard';
-import HabitsList from './components/HabitsList';
-import GoalsList from './components/GoalsList';
-import Stats from './components/Stats';
-import AIInsights from './components/AIInsights';
-import Settings from './components/Settings';
+import { Habit, Goal, Theme, UserProfile } from './types.ts';
+import { storage } from './services/storageService.ts';
+import Dashboard from './components/Dashboard.tsx';
+import HabitsList from './components/HabitsList.tsx';
+import GoalsList from './components/GoalsList.tsx';
+import Stats from './components/Stats.tsx';
+import AIInsights from './components/AIInsights.tsx';
+import Settings from './components/Settings.tsx';
 
 const App: React.FC = () => {
   const [habits, setHabits] = useState<Habit[]>([]);
