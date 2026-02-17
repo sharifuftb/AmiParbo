@@ -7,8 +7,8 @@ export interface Habit {
   createdAt: string;
   category: string;
   targetDays: number;
-  durationMinutes?: number; // Total duration in minutes
-  remainingSeconds?: number; // Current countdown state
+  durationMinutes?: number; 
+  remainingSeconds?: number; 
   isTimerRunning?: boolean;
 }
 
@@ -22,7 +22,8 @@ export interface Goal {
 export interface UserProfile {
   name: string;
   joinedDate: string;
-  avatarUrl: string; // URL or base64 of the logo/user pic
+  avatarUrl: string;
+  ironWillStartDate: string; // The timestamp for the main streak
 }
 
 export type Theme = 'light' | 'dark';

@@ -6,9 +6,7 @@ import {
   Target, 
   BarChart3, 
   Sparkles, 
-  Plus, 
   CheckCircle2, 
-  Circle, 
   Trophy,
   Moon,
   Sun,
@@ -71,7 +69,7 @@ const App: React.FC = () => {
             <div className="bg-indigo-600 p-2 rounded-xl text-white shadow-lg shadow-indigo-500/20">
               <Flame size={24} />
             </div>
-            <h1 className="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">Ami Parbo</h1>
+            <h1 className="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent font-['Hind_Siliguri']">Ami Parbo</h1>
           </div>
           <div className="flex items-center gap-2">
             <Link to="/settings" className="p-2 rounded-full hover:bg-white/10 transition-colors">
@@ -87,9 +85,9 @@ const App: React.FC = () => {
         </header>
 
         {/* Main Content Area */}
-        <main className="pb-28 max-w-md mx-auto p-4">
+        <main className="pb-28 max-w-md mx-auto p-4 font-['Hind_Siliguri']">
           <Routes>
-            <Route path="/" element={<Dashboard habits={habits} goals={goals} profile={profile} />} />
+            <Route path="/" element={<Dashboard habits={habits} goals={goals} profile={profile} onResetProfile={() => setProfile(storage.getProfile())} />} />
             <Route path="/habits" element={<HabitsList habits={habits} onUpdate={updateHabits} />} />
             <Route path="/goals" element={<GoalsList goals={goals} onUpdate={updateGoals} />} />
             <Route path="/stats" element={<Stats habits={habits} />} />
@@ -111,13 +109,7 @@ const App: React.FC = () => {
   );
 };
 
-interface NavItemProps {
-  to: string;
-  icon: React.ReactNode;
-  label: string;
-}
-
-const NavItem: React.FC<NavItemProps> = ({ to, icon, label }) => {
+const NavItem = ({ to, icon, label }: { to: string; icon: React.ReactNode; label: string }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
   

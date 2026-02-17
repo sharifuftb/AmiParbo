@@ -8,6 +8,7 @@ interface Props {
   habits: Habit[];
   goals: Goal[];
   profile: UserProfile;
+  onResetProfile: () => void;
 }
 
 const Dashboard: React.FC<Props> = ({ habits: initialHabits, goals, profile }) => {
@@ -17,7 +18,7 @@ const Dashboard: React.FC<Props> = ({ habits: initialHabits, goals, profile }) =
     setHabits(initialHabits);
   }, [initialHabits]);
 
-  // Global timer interval
+  // Global timer interval for active habits
   useEffect(() => {
     const interval = setInterval(() => {
       setHabits(currentHabits => {
